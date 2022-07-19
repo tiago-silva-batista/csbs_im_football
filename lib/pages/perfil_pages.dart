@@ -29,23 +29,30 @@ class _PerfilPagesState extends State<PerfilPages> {
                   child: Image.asset("assets/images/stadium.jpg"),
                 ),
               ),
-              Column(
-                children: [
-                  const Text("Número de jogos frequentados: 32"),
-                  Row(
-                    children: const [
-                      CircleAvatar(
-                        radius: 24,
-                        backgroundImage:
-                            AssetImage("assets/images/perfil.jpeg"),
-                      ),
-                      Text(
-                        'Seu Nome',
-                        style: UiTextStyle.text1,
-                      ),
-                    ],
-                  ),
-                ],
+              Padding(
+                padding: const EdgeInsets.all(16),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    const Text(
+                      "Número de jogos frequentados: 32",
+                      style: UiTextStyle.text2,
+                    ),
+                    Row(
+                      children: const [
+                        CircleAvatar(
+                          radius: 24,
+                          backgroundImage:
+                              AssetImage("assets/images/perfil.jpeg"),
+                        ),
+                        Text(
+                          'Seu Nome',
+                          style: UiTextStyle.text1,
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
               )
             ],
           ),

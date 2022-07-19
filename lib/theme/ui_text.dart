@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class UiTextStyle {
@@ -6,5 +5,11 @@ class UiTextStyle {
     fontSize: 24,
     fontWeight: FontWeight.bold,
     color: Colors.red,
+  );
+
+  static const TextStyle text2 = TextStyle(
+    fontSize: 24,
+    fontWeight: FontWeight.bold,
+    color: Colors.blue,
   );
 }
