@@ -26,5 +26,21 @@ flutter:
   assets:
     - assets/images/
 
- 
+  fonts:
+    - family: roboto
+      fonts: 
+        - asset: assets/fonts/Roboto-Regular.ttf
+
+    - family: roboto-medium
+      fonts: 
+        - asset: assets/fonts/Roboto-Medium.ttf
+
+    - family: roboto-light
+      fonts: 
+        - asset: assets/fonts/Roboto-Light.ttf
+
+    - family: roboto-bold
+      fonts: 
+        - asset: assets/fonts/Roboto-Bold.ttf
+
   uses-material-design: true

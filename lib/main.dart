@@ -1,6 +1,7 @@
 // @dart=2.9
 
 import 'package:csbs_im_football/pages/perfil_pages.dart';
+import 'package:csbs_im_football/theme/ui_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -16,8 +17,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: PerfilPages(),
-    );
+        debugShowCheckedModeBanner: false,
+        home: PerfilPages(),
+        theme: UiTheme.theme1);
   }
 }
