@@ -1,5 +1,3 @@
-// @dart=2.9
-
 import 'package:csbs_im_football/pages/perfil_pages.dart';
 import 'package:csbs_im_football/theme/ui_theme.dart';
 import 'package:flutter/material.dart';
@@ -10,16 +8,49 @@ void main() {
   SystemChrome.setPreferredOrientations(
       [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]);
 
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
+  const MyApp({Key? key}) : super(key: key);
+
+  @override
+  State<MyApp> createState() => _AppState();
+}
+
+class _AppState extends State<MyApp> with WidgetsBindingObserver {
+  get tema => null;
+
+  @override
+  void initState() {
+    WidgetsBinding.instance!.addObserver(this);
+    PreferenciaTema.setTema();
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    WidgetsBinding.instance!.removeObserver(this);
+    super.dispose();
+  }
+
+  @override
+  void didChangePlatformBrightness() {
+    PreferenciaTema.setTema();
+  }
+
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      theme: UiTheme.theme1,
-      home: const PerfilPages(),
+    return ValueListenableBuilder(
+      valueListenable: PreferenciaTema.tema,
+      builder: (BuildContext context, Brightness tema, _) => MaterialApp(
+        debugShowCheckedModeBanner: false,
+        theme: ThemeData(
+          primarySwatch: Colors.red,
+          brightness: tema,
+        ),
+        home: const PerfilPages(),
+      ),
     );
   }
 }
