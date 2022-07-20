@@ -46,7 +46,7 @@ class _PerfilPagesState extends State<PerfilPages> {
                               AssetImage("assets/images/perfil.jpeg"),
                         ),
                         Text(
-                          'Seu Nome',
+                          'Tiago Silva',
                           style: UiTextStyle.text1,
                         ),
                       ],
