@@ -16,7 +16,8 @@ class _PerfilPagesState extends State<PerfilPages> {
   final int matchNumber = 32;
   final String userName = "Tiago Silva";
   final String userImage = "assets/images/perfil.jpeg";
-  final String userCover = "assets/images/stadium.jpg";
+  final String userCover =
+      "https://placar.abril.com.br/wp-content/uploads/2021/09/arenacorinthians.jpg";
 
   @override
   Widget build(BuildContext context) {
@@ -28,12 +29,15 @@ class _PerfilPagesState extends State<PerfilPages> {
             clipBehavior: Clip.none,
             alignment: Alignment.bottomLeft,
             children: [
-              SizedBox(
+              Container(
                 width: MediaQuery.of(context).size.width,
                 height: 400,
-                child: FittedBox(
-                  fit: BoxFit.fitHeight,
-                  child: Image.asset(userCover),
+                decoration: BoxDecoration(
+                  color: Colors.black.withAlpha(6),
+                  image: DecorationImage(
+                    image: NetworkImage(userCover),
+                    fit: BoxFit.cover,
+                  ),
                 ),
               ),
               Padding(
