@@ -1,4 +1,5 @@
 import 'package:csbs_im_football/components/app_bar_component.dart';
+import 'package:csbs_im_football/components/avatar_component.dart';
 import 'package:csbs_im_football/theme/ui_size.dart';
 import 'package:csbs_im_football/theme/ui_text.dart';
 import 'package:flutter/material.dart';
@@ -23,8 +24,9 @@ class _PerfilPagesState extends State<PerfilPages> {
         extendBodyBehindAppBar: true,
         appBar: AppBarComponent(),
         body: SingleChildScrollView(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          child: Stack(
+            clipBehavior: Clip.none,
+            alignment: Alignment.bottomLeft,
             children: [
               SizedBox(
                 width: MediaQuery.of(context).size.width,
@@ -46,9 +48,9 @@ class _PerfilPagesState extends State<PerfilPages> {
                     const SizedBox(height: UiSize.spaceDefault),
                     Row(
                       children: [
-                        CircleAvatar(
-                          radius: 16,
-                          backgroundImage: AssetImage(userImage),
+                        AvatarComponent(
+                          avatar: userImage,
+                          callback: (value) {},
                         ),
                         const SizedBox(width: UiSize.spaceDefault),
                         Text(
