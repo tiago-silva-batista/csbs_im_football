@@ -1,5 +1,4 @@
 import 'package:csbs_im_football/theme/ui_size.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class AppBarComponent extends StatefulWidget with PreferredSizeWidget {

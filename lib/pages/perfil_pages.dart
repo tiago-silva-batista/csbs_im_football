@@ -1,4 +1,5 @@
 import 'package:csbs_im_football/components/app_bar_component.dart';
+import 'package:csbs_im_football/theme/ui_size.dart';
 import 'package:csbs_im_football/theme/ui_text.dart';
 import 'package:flutter/material.dart';
 
@@ -11,6 +12,10 @@ class PerfilPages extends StatefulWidget {
 
 class _PerfilPagesState extends State<PerfilPages> {
   get width => null;
+  final int matchNumber = 32;
+  final String userName = "Tiago Silva";
+  final String userImage = "assets/images/perfil.jpeg";
+  final String userCover = "assets/images/stadium.jpg";
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +31,7 @@ class _PerfilPagesState extends State<PerfilPages> {
                 height: 400,
                 child: FittedBox(
                   fit: BoxFit.fitHeight,
-                  child: Image.asset("assets/images/stadium.jpg"),
+                  child: Image.asset(userCover),
                 ),
               ),
               Padding(
@@ -34,19 +39,20 @@ class _PerfilPagesState extends State<PerfilPages> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    const Text(
-                      "Número de jogos frequentados: 32",
+                    Text(
+                      matchNumber.toString() + " jogos",
                       style: UiTextStyle.text2,
                     ),
+                    const SizedBox(height: UiSize.spaceDefault),
                     Row(
-                      children: const [
+                      children: [
                         CircleAvatar(
-                          radius: 24,
-                          backgroundImage:
-                              AssetImage("assets/images/perfil.jpeg"),
+                          radius: 16,
+                          backgroundImage: AssetImage(userImage),
                         ),
+                        const SizedBox(width: UiSize.spaceDefault),
                         Text(
-                          'Tiago Silva',
+                          userName,
                           style: UiTextStyle.text1,
                         ),
                       ],
