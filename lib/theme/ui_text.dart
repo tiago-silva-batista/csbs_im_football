@@ -16,4 +16,10 @@ class UiTextStyle {
     color: UiColor.secondLight,
     shadows: [UiShadow.textShadow],
   );
+
+  static TextStyle textButton = const TextStyle(
+    fontSize: 14,
+    fontWeight: FontWeight.bold,
+    color: UiColor.secondLight,
+  );
 }
